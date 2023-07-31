@@ -3,17 +3,17 @@
 # Из всех арифметических операций допускаются только +1 и -1. Также нельзя использовать циклы.
 
 
-def sum2(A, B):
-    if (B==0):
-        return A
+def recursive_sum(a, b):
+    if a == 0:
+        return b
     else:
-        return sum2(A+1,B-1)
+        a=a-1
+        b=b+1
+        return recursive_sum(a, b)
 
 a = int(input('Введите А:'))
 print()
 b = int(input('Введите В:'))
 print()
-if (a>=b):
-    print (sum2(a,b))
-else:
-    print(sum2(b,a))
+
+print(recursive_sum(a, b))
